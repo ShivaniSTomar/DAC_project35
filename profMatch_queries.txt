@@ -1,0 +1,19 @@
+create database profMatch;
+use profMatch;
+create table admin (id int, user_name varchar(20), password varchar(20));
+insert into admin values(1,"Shivani","shivani@1");
+insert into admin values(2,"Krupa","krupa@2");
+insert into admin values(3,"Shraddha","shraddha@3");
+insert into admin values(4,"Gaurav","surya@4");
+insert into admin values(5,"Shubham","shubham@5");
+insert into admin values(6,"Saurabh","saurabh@6");
+
+create table freelancer_details(free_id int primary key auto_increment, name varchar(20) not null, email varchar(30) unique, education varchar(20), experience int, password varchar(20) not null, resume blob);
+
+create table institute_details(inst_id int primary key auto_increment, name varchar(20) not null , email varchar(30) unique, address varchar(50), institute_id varchar(20) unique not null, mobile_no varchar(12), pincode varchar(6), verified_status boolean);
+
+create table advertisement(adv_id int primary key auto_increment, subject_name varchar(20), institute_id varchar(20), from_date date, to_date date, budget bigint, status boolean , foreign key (institute_id) references institute_details(institute_id));
+
+create table applicants(adv_id int, free_id int, foreign key (free_id) references freelancer_details(free_id));
+
+create table hired_teacher(hir_id int primary key auto_increment, adv_id int, institute_id varchar(20), free_id int, foreign key (institute_id) references institute_details (institute_id), foreign key (adv_id) references advertisement (adv_id), foreign key (free_id) references freelancer_details(free_id));
