@@ -1,0 +1,19 @@
+//admin
+1. login table ->(id,username, password)
+
+
+
+//freelancer
+1.freelancer_details->(id, password, email, name, higher_education, experience(years), resume(blob))
+
+
+
+//institute
+1.Institute_details->(id,name,address, uid, password, mobileNo, pincode, email, verified_status)
+2.Advertisement->(adv_id, subject_id, subject_name, uid(FK), from_date, to_date, budget, status(open/close))
+3.Hired_teacher->(hir_id, adv_id(FK), uid(institute FK), techer_id(FK applicants))
+4.Applicants->(adv_id, teachers_id)
+
+==================================================================================================================
+gitRepo
+
