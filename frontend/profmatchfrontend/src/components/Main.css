@@ -1,0 +1,17 @@
+.main{
+    display: flex;
+}
+.aboutus{
+    width: 50%;
+    height: 650px;
+    background-color: blanchedalmond;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+    margin-right: 20px;
+    text-align: left;
+}
+.signin{
+    padding-top: 150px;
+    padding-left: 300px;
+}
